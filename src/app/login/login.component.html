@@ -1,0 +1,25 @@
+<div class="login-container">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="column gap-1">
+      <h2>Login</h2>
+      
+      <div class="form-field column gap-05">
+        <label for="username" class="floating-label">
+          <span class="label-text">Nom d'utilisateur</span>
+          <input id="username" type="text" formControlName="username" pInputText>
+        </label>
+      </div>
+
+      <div class="form-field column gap-05">
+        <label for="password" class="floating-label">
+          <span class="label-text">Mot de passe</span>
+          <input id="password" type="password" formControlName="password" pInputText>
+        </label>
+      </div>
+
+      <button pButton type="submit" [disabled]="!loginForm.valid">Login</button>
+      
+      <div *ngIf="error" class="error-message">
+        Nom d'utilisateur ou mot de passe invalide
+      </div>
+    </form>
+</div>

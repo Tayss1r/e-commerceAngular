@@ -14,6 +14,9 @@ import { ToastModule } from 'primeng/toast';
 import { ConfirmationService } from 'primeng/api';
 import { PricePipe } from '../../pipes/price.pipe';
 import { TruncateNamePipe } from '../../pipes/truncate-name.pipe';
+import { CommonModule } from '@angular/common';
+import { AuthService } from '../../services/auth.service';
+
 
 @Component({
   selector: 'app-product',
@@ -26,13 +29,14 @@ import { TruncateNamePipe } from '../../pipes/truncate-name.pipe';
     ToastModule,
     PricePipe,
     TruncateNamePipe,
+    CommonModule,
   ],
   providers: [ConfirmationService],
   templateUrl: './product.component.html',
   styleUrl: './product.component.scss',
 })
 export class ProductComponent {
-  constructor(private confirmationService: ConfirmationService) {}
+  constructor(public authService: AuthService, private confirmationService: ConfirmationService) {}
 
   @ViewChild('deleteButton') deleteButton: any;
 

@@ -1,0 +1,41 @@
+.form-field {
+    position: relative;
+    margin-bottom: 1rem;
+  }
+  
+  .floating-label {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .label-text {
+    position: absolute;
+    left: 0.75rem;
+    top: -0.5rem;
+    background: white;
+    padding: 0 0.5rem;
+    font-size: 0.875rem;
+    color: #666;
+    transition: all 0.2s ease;
+  }
+  
+  input:focus + .label-text,
+  input:not(:placeholder-shown) + .label-text {
+    transform: translateY(-1.5rem);
+    font-size: 0.75rem;
+    color: #2196F3;
+  }
+  
+  input {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+  }
+  
+  input:focus {
+    border-color: #2196F3;
+    box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.1);
+    outline: none;
+  }

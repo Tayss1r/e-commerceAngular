@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { Paginator, PaginatorModule } from 'primeng/paginator';
 import { EditPopupComponent } from '../components/edit-popup/edit-popup.component';
 import { ButtonModule } from 'primeng/button';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -21,7 +22,7 @@ import { ButtonModule } from 'primeng/button';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-  constructor(private productsService: ProductsService) {}
+  constructor(public authService: AuthService, private productsService: ProductsService) {}
 
   @ViewChild('paginator') paginator: Paginator | undefined;
 
