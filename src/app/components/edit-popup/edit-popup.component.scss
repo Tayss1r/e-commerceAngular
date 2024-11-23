@@ -1,0 +1,8 @@
+input {
+    &:focus {
+      outline: 2px solid grey; // Change the outline color
+      // OR
+      outline: none; // Remove the outline completely
+      border-color: grey; // Add your own border color
+    }
+  }
